@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg-top: #f6f8ff;
+  --bg-bottom: #ecfff6;
+  --card-bg: #ffffff;
+  --text-main: #1d2433;
+  --text-muted: #5f6b84;
+  --accent: #1f8a70;
+  --accent-hover: #176b58;
+  --border: #d8deea;
+  --shadow: 0 18px 42px rgba(18, 30, 60, 0.12);
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Outfit", "Segoe UI", sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(31, 138, 112, 0.14), transparent 44%),
+    radial-gradient(circle at 85% 82%, rgba(46, 118, 255, 0.12), transparent 38%),
+    linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: min(100%, 460px);
+  background: var(--card-bg);
+  border: 1px solid rgba(216, 222, 234, 0.8);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: 0.2px;
+}
+
+.subtitle {
+  margin: 10px 0 24px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.register-form {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font: inherit;
+  color: var(--text-main);
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder {
+  color: #9aa4ba;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(31, 138, 112, 0.18);
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 13px 16px;
+  font: inherit;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--accent), #2a7de1);
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.2s ease;
+}
+
+button:hover {
+  filter: brightness(0.95);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 540px) {
+  .card {
+    padding: 22px;
+    border-radius: 14px;
+  }
+}
